@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Weather</title>
+</head>
+<body>
+
+    <main class="mars-current-weather">
+        <h1 class="main-title">
+            LATEST WEATHER AT SLYSIUM PLANTITIA
+        </h1>
+
+        <div class="date">
+            <h2 class="section-title section-title-date">Sol 377</h2>
+            <p class="date-day">March 19</p>
+        </div>
+        <div class="temp">
+            <h2 class="section-title"></h2>
+            <p class="reading">High:-20C</p>
+            <p class="reading">Low: -120C</p>
+        </div>
+        <div class="wind">
+            <h2 class="section-title">Wind</h2>
+            <p class="reading">75 Kph</p>
+            <div class="wind-direction">
+                <p class="sr-only">45deg</p>
+                <div class="wind-arrow"></div>
+            </div>
+        </div>
+        <div class="info">
+            <p>is taking daily weather measurements (temperature, wind, pressure) 
+                on the surface of Mars at Elysium Planitia, a flat, smooth plain near Mars'
+                equator.</p>
+            <p>This is only a part of InSight's mission. <a href="https://mars.nasa.gov/insight/mission/overview">Click Here</a> to find out more</p>
+        </div>
+        <div class="unit">
+            <label for="cel">C</label>
+            <input type="radio" name="unit" id="cel" checked>
+            <!-- when unit toggle is clicked, the checkbox needs to switch -->
+            <button class="unit-toggle"></button>
+            <label for="fah">F</label>
+            <input type="radio" name="unit" id="fah">
+        </div>
+    </main>
+
+    <div class="previous-weather">
+        <label for="weather-toggle" 
+        class="show-previous-weather-label">&#8593; <span class="sr-only"></span>Show previous Weather</label>
+
+        <input type="checkbox" id="weather-toggle" class="show-previous-weather-toggle">
+
+        <h2 class="main-title">Previous 7 days</h2>
+
+        <div class="previous-days">
+            <div class="previous-day">
+                <h3 class="previous-day-sol">Sol 377</h3>
+                <p class="previous-day-date">March 18</p>    
+                <p class="previous-day-temp">High:-20C</p>
+                <p class="previous-day-temp">Low: -120C</p>
+                <button class="previous-day-more-info">more info</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
