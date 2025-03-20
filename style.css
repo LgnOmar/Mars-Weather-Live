@@ -128,7 +128,7 @@ h1, h2, h3 {
   height: calc(var(--size) * 3);
   width: var(--size);
   background: var(--clr-accent-dark);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
   transform: translateY(-50%) rotate(var(--direction));
   transform-origin: bottom center;
   transition: transform 500ms ease;
@@ -188,7 +188,7 @@ h1, h2, h3 {
   background: var(--clr-light);
   color: var(--clr-dark);
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   width: 100%;
   transform: translateY(60%);
   transition: transform 350ms ease;
@@ -202,7 +202,7 @@ h1, h2, h3 {
   width: 10rem;
   transform: translate(-50%, calc(-100% - 3rem));
   text-align: center;
-  font-size: var(--fs-h1);
+  font-size: var(--fs-h2);
   line-height: 1;
   clip-path: polygon(50% 0, 0% 100%, 100% 100%);
   cursor: pointer;
@@ -245,7 +245,7 @@ h1, h2, h3 {
   background: var(--clr-dark);
   color: var(--clr-light);
   text-transform: uppercase;
-  padding: 0.5em 1em;
+  padding: 0.3em 1em;
   margin-top: 1em;
 }
 .previous-day-more-info:hover {
@@ -285,7 +285,7 @@ h1, h2, h3 {
   animation-delay: 225ms;
 }
 .previous-weather.show-weather .previous-day:nth-child(7) {
-  animation-delay: 250ms;
+  animation-delay: 300ms;
 }
 
 @keyframes slideUpIn {
