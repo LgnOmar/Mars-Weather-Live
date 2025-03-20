@@ -1,0 +1,91 @@
+:root{
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-semi: 500;
+    --fw-bold: 700;;
+    --fs-h1: 1.5rem;
+    --fs-h2: 2.25rem;
+    --fs-body: 1rem;
+    --fs-xl: 4.5rem,
+    
+    --clr-light: #fff;
+    --clr-dark: #444;
+    --clr-gray: #989898;
+    --clr-accent: #d06d6d;
+    --clr-accent-dark: #613131;
+    --clr-light: #fff;
+}
+
+.sr-only:not(:focus):focus(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+body{
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    background-image: url(/img/mars.jpg);
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+a{
+    color: var(--clr-accent);
+
+    &:hover{
+        color: var(--clr-accent-dark);
+    }
+}
+
+h1, h2, h3 {
+    line-height: 1;
+}
+
+.main-title{
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-light);
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    letter-spacing: 2px;
+    grid-column: 1 / -1;
+}
+
+.section-title{
+    scroll-snap-stop: var(--fs-h2);
+    font-weight: var(--fw-bold);
+    margin: 0;
+}
+
+.section-title-date{
+    font-size: var(--fs-xl);
+
+}
+
+.mars-current-weather{
+    background: rgba(0,0,0,.7);
+    padding: 2em;
+    max-width: 1000px;
+    margin: 4em 0 0 4em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.date{
+    grid-column: 1/2;
+}
+
+.temp{
+    grid-column: 2/3;
+}
+
+.wind{
+    grid-column: 3/4;
+}
