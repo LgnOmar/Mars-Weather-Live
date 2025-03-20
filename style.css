@@ -185,22 +185,22 @@ h1, h2, h3 {
 }
 
 .previous-weather {
-  background: var(--fw-light);
+  background: var(--clr-light);
   color: var(--clr-dark);
   position: absolute;
   bottom: 0;
   width: 100%;
-  transform: translateY(75%);
+  transform: translateY(60%);
   transition: transform 350ms ease;
-  padding: 2em;
+  padding: 3rem;
 }
 
 .show-previous-weather {
   position: absolute;
-  background-color: var(--fw-light);
+  background: var(--clr-light);
   left: 50%;
   width: 10rem;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, calc(-100% - 3rem));
   text-align: center;
   font-size: var(--fs-h1);
   line-height: 1;
@@ -224,12 +224,79 @@ h1, h2, h3 {
   justify-content: space-between;
 }
 
+.previous-weather-title {
+  text-align: left;
+}
+
+.previous-day {
+  opacity: 0;
+}
+.previous-day > * {
+  margin: 0;
+}
+.previous-day-date {
+  font-size: 0.9rem;
+  color: var(--clr-gray);
+}
+.previous-day-more-info {
+  cursor: pointer;
+  border: 0;
+  border-radius: 100vmax;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+}
+.previous-day-more-info:hover {
+  background: var(--clr-gray);
+}
+
 .previous-weather.show-weather {
   transform: translateY(0);
 }
 .previous-weather.show-weather .show-previous-weather span {
   display: block;
   transform: rotate(180deg) translateY(-6px);
+}
+.previous-weather.show-weather .previous-weather-title, .previous-weather.show-weather .previous-day {
+  opacity: 1;
+  animation: slideUpIn 750ms forwards;
+}
+.previous-weather.show-weather .previous-weather-title {
+  text-align: center;
+}
+.previous-weather.show-weather .previous-day:nth-child(1) {
+  animation-delay: 100ms;
+}
+.previous-weather.show-weather .previous-day:nth-child(2) {
+  animation-delay: 125ms;
+}
+.previous-weather.show-weather .previous-day:nth-child(3) {
+  animation-delay: 150ms;
+}
+.previous-weather.show-weather .previous-day:nth-child(4) {
+  animation-delay: 175ms;
+}
+.previous-weather.show-weather .previous-day:nth-child(5) {
+  animation-delay: 200ms;
+}
+.previous-weather.show-weather .previous-day:nth-child(6) {
+  animation-delay: 225ms;
+}
+.previous-weather.show-weather .previous-day:nth-child(7) {
+  animation-delay: 250ms;
+}
+
+@keyframes slideUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
