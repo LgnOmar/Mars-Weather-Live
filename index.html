@@ -40,7 +40,7 @@
         </div>
         <div class="unit">
             <label for="cel">C</label>
-            <input type="radio" name="unit" id="cel" checked>
+            <input class="sr-only" type="radio" name="unit" id="cel" checked>
             <!-- when unit toggle is clicked, the checkbox needs to switch -->
             <button class="unit-toggle"></button>
             <label for="fah">F</label>
@@ -48,11 +48,10 @@
         </div>
     </main>
 
-    <div class="previous-weather">
-        <label for="weather-toggle" 
-        class="show-previous-weather-label">&#8593; <span class="sr-only"></span>Show previous Weather</label>
-
-        <input type="checkbox" id="weather-toggle" class="show-previous-weather-toggle">
+    <div class="previous-weather show-weather">
+        <!-- when clicked toggle 'show weahter'
+         to .previous-weahter div -->
+        <button for="weather-toggle" class="show-previous-weather"><span>&#8593;</span> <span class="sr-only">Show previous Weather</span></button>
 
         <h2 class="main-title">Previous 7 days</h2>
 

@@ -153,17 +153,38 @@ h1, h2, h3 {
 .unit{
     grid-column: 3/4;
     place-self: end;
-    color: var(--clr-gray);
+    color: var(--clr-light);
     display: flex;
+    opacity: .7;
+    transition: opacity 275ms linear;
+
+    &:hover{
+        opacity: 1;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    input{
+        
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
 
     &-toggle{
         cursor: pointer;
         width: 4em;
-        border: 2px solid var(--clr-gray);
+        border: 2px solid var(--clr-light);
         background: transparent;
         padding: 0;
         border-radius: 100vmax;
-        margin: 0 .5em;
+        margin: 0 1em;
 
         &::after{
             content: '';
@@ -172,11 +193,67 @@ h1, h2, h3 {
             border-radius: 50%;
             height: 1rem;
             margin: 3px;
+            margin-left: auto;
             width: 1rem;
         }
     }
+
+        
+    :checked ~ .unit-toggle::after{
+        margin-left: 3px;
+        // margin-right: auto;
+    }
+
 }
 
-:checked ~ .unit-toggle::after{
-    margin-right: auto;
+
+.previous-weather{
+    background: var(--fw-light);
+    color: var(--clr-dark);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(75%);
+    transition: transform 350ms ease;
+    padding: 2em;
+}
+
+.show-previous-weather{
+    position: absolute;
+    background-color: var(--fw-light);
+    left: 50%;
+    width: 10rem;
+    transform: translate(-50%,-100%);
+    text-align: center;
+    font-size: var(--fs-h1);
+    line-height: 1;
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    cursor: pointer;
+    color: var(--clr-gray);
+    border: 0;
+    font-family: inherit;
+
+    &:hover, &:focus{
+        color: var(--clr-dark);
+    }
+
+    span{
+        display: block;
+        transform: rotate(0);
+        transition: transform 300ms ease;
+    }
+}
+
+.previous-days{
+    display: flex;
+    justify-content: space-between;
+}
+
+.previous-weather.show-weather{
+    transform: translateY(0);
+
+    .show-previous-weather span{
+        display: block;
+        transform: rotate(180deg) translateY(-6px);
+    }
 }
