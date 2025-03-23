@@ -1,15 +1,22 @@
 const express = require('express');
+const cors = require('cors');
 const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5500');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+const allowedOrigins = [
+    'http://localhost:5500',
+    'http://127.0.0.1:5500'
+  ];
+
+// Allow specific origins
+app.use(cors({
+    origin: allowedOrigins,
+    methods: 'GET',
+    allowedHeaders: ['Content-Type']
+  }));
 
 // Proxy endpoint for NASA API
 app.get('/api/weather', async (req, res) => {
@@ -19,7 +26,11 @@ app.get('/api/weather', async (req, res) => {
     );
     res.json(response.data);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch data from NASA API' });
+    console.error("NASA API Error:", error.message)
+    return res.status(500).json({
+        error: "failed to fetch data from NASA API",
+        details: error.message
+    })
   }
 });
 
