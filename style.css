@@ -127,7 +127,7 @@ h1, h2, h3 {
 .wind-arrow {
   /* update custom props within js to update the dierction */
   --direction: 0deg;
-  --size: 1.5rem;
+  --size: 1rem;
   height: calc(var(--size) * 3);
   width: var(--size);
   background: var(--clr-accent-dark);
@@ -137,10 +137,9 @@ h1, h2, h3 {
   transform-origin: bottom center;
   transition: transform 500ms ease;
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 50%;
   margin-left: calc(var(--size) / -2);
-  bottom: 0;
 }
 
 .info {
