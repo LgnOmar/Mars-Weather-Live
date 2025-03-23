@@ -113,6 +113,8 @@ h1, h2, h3 {
   grid-column: 2/3;
 }
 .wind-direction {
+  position: relative;
+  place-items: center;
   --size: 5rem;
   width: var(--size);
   height: var(--size);
@@ -123,15 +125,22 @@ h1, h2, h3 {
   grid-row: 1/span 2;
 }
 .wind-arrow {
+  /* update custom props within js to update the dierction */
   --direction: 0deg;
-  --size: 1rem;
+  --size: 1.5rem;
   height: calc(var(--size) * 3);
   width: var(--size);
   background: var(--clr-accent-dark);
+  /* this is a tringle  to show the wind direction [tricky lol] */
   clip-path: polygon(50% 0, 0% 100%, 100% 100%);
-  transform: translateY(-50%) rotate(var(--direction));
+  transform: rotate(var(--direction));
   transform-origin: bottom center;
   transition: transform 500ms ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: calc(var(--size) / -2);
+  bottom: 0;
 }
 
 .info {
@@ -188,7 +197,7 @@ h1, h2, h3 {
   background: var(--clr-light);
   color: var(--clr-dark);
   position: absolute;
-  bottom: -10px;
+  bottom: -60px;
   width: 100%;
   transform: translateY(60%);
   transition: transform 350ms ease;
