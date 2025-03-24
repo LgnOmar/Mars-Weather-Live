@@ -59,12 +59,14 @@ h1, h2, h3 {
 
 .section-title {
   scroll-snap-stop: var(--fs-h2);
-  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-light);
   margin: 0;
 }
 
 .section-title-date {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-light);
 }
 
 .reading {
@@ -88,9 +90,9 @@ h1, h2, h3 {
 }
 .date-day {
   font-size: var(--fs-h2);
+  font-weight: var(--fw-light);
   margin: 0;
   color: var(--clr-gray);
-  font-weight: var(--fw-light);
 }
 
 .temp {
@@ -196,7 +198,7 @@ h1, h2, h3 {
   background: var(--clr-light);
   color: var(--clr-dark);
   position: absolute;
-  bottom: -5px;
+  bottom: -20px;
   width: 100%;
   transform: translateY(60%);
   transition: transform 350ms ease;

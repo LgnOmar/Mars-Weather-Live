@@ -40,7 +40,10 @@ function displaySelectedSol(sols){
     currentTemplowElement.innerText = displayTemperature(selectedSol.minTemp);
     windSpeedElement.innerText = displaySpeed(selectedSol.windSpeed);
     windDirectionText.innerText = '';
+    console.log("Updating wind direction to:", `${selectedSol.windDirectionDegrees}deg`);
     windDirectionArrow.style.setProperty('--direction', `${selectedSol.windDirectionDegrees}deg`)
+
+
 }
 
 function displayPreviousSols(sols){
