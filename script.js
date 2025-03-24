@@ -17,6 +17,11 @@ const windDirectionArrow = document.querySelector('[data-wind-direction-arrow]')
 const previousSolTemplate = document.querySelector('[data-previous-sol-template]');
 const previousSolContainer = document.querySelector('[data-previous-sols]');
 
+const unitToggle = document.querySelector("[data-unit-toggle]")
+const metricRadio = document.getElementById('cel')
+const imperialRadio = document.getElementById('fah')
+
+
 
 previousWeatherToggle.addEventListener('click', () => {
     previousWeather.classList.toggle('show-weather')
@@ -25,9 +30,17 @@ previousWeatherToggle.addEventListener('click', () => {
 let selectedSolIndex
 
 getWeather().then(sols =>{
-    selectedSolIndex = sols.length -1;
+    selectedSolIndex = sols.length - 1;
     displaySelectedSol(sols);
     displayPreviousSols(sols)
+    updateUnits();
+
+    unitToggle.addEventListener('click', () => {
+        let metricUnits = !isMetric()
+        metricRadio.checked = metricUnits
+        imperialRadio.checked = !metricUnits
+        updateUnits();
+    })
 });
 
 
@@ -101,4 +114,21 @@ function getWeather(){
         })
     })
 
+}
+
+
+function updateUnits(){
+    const speedUnits = document.querySelectorAll('[data-speed-unit]')
+    const tempUnits = document.querySelectorAll('[data-temp-unit]')
+    speedUnits.forEach(unit => { 
+        unit.innerText = isMetric() ? 'Kph' : 'Mph';
+    })
+    tempUnits.forEach(unit => { 
+        unit.innerText = isMetric() ? 'C' : 'F';
+    })
+}
+
+
+function isMetric(){
+    return metricRadio.checked;
 }

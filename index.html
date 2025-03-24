@@ -24,17 +24,17 @@
             <p class="reading">
                 High:
                 <span data-current-temp-high></span>
-                C</p>
+                <span data-temp-unit></span></p>
             <p class="reading">
                 Low: 
                 <span data-current-temp-low></span>
-                C</p>
+                <span data-temp-unit></span></p>
         </div>
         <div class="wind">
             <h2 class="section-title">Wind</h2>
             <p class="reading">
                 <span data-wind-speed></span>
-                Kph</p>
+                <span data-speed-unit></span></p>
             <div class="wind-direction">
                 <p class="sr-only" data-wind-direction-text aria-hidden="true"></p>
                 <!-- update -- direction custom prop
@@ -52,7 +52,7 @@
             <label for="cel">C</label>
             <input class="sr-only" type="radio" name="unit" id="cel" checked>
             <!-- when unit toggle is clicked, the checkbox needs to switch -->
-            <button class="unit-toggle"></button>
+            <button class="unit-toggle" data-unit-toggle></button>
             <label for="fah">F</label>
             <input type="radio" name="unit" id="fah">
         </div>
@@ -82,11 +82,11 @@
             <p class="previous-day-temp">
                 High:
                 <span data-temp-high></span>
-                C</p>
+                <span data-temp-unit></span></p>
             <p class="previous-day-temp">
                 Low: 
                 <span data-temp-low></span>
-                C</p>
+                <span data-temp-unit></span></p>
             <button class="previous-day-more-info" data-select-button>more info</button>
         </div>
     </template>
